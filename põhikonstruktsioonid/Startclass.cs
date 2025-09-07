@@ -59,73 +59,131 @@ namespace põhikonstruktsioonid
             //    }
             //}
 
-            //2. Ülesanne !!!!!!!
-            //Спроси имена двух человек и сообщи, что они сегодня сидят рядом в парте.
+            //2. Ülesanne
+            //V.1
             //Console.Write("Mis su nimi on? ");
             //string nimi1 = Console.ReadLine();
             //Console.Write("Mis su nimi on? ");
             //string nimi2 = Console.ReadLine();
-            //if ()
-            //else
+            //Console.WriteLine($"{nimi1} ja {nimi2}, teie istute täna pingis kõrvuti.");
+            //V.2
+            //try
             //{
-            //    try
-            //    {
-            //        Console.Write("Kui vana sa oled?: ");
-            //        int vanus = int.Parse(Console.ReadLine());
-            //        string pilet = Osa1_funktsioonid.Pilet(vanus);
-            //        Console.WriteLine($"Juku su pilet on {pilet}");
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        Console.WriteLine(e);
-            //    }
+            //    Console.Write("Mis su nimi on? ");
+            //    string nimi1 = Console.ReadLine();
+            //    Console.Write("Mis su nimi on? ");
+            //    string nimi2 = Console.ReadLine();
+            //    string con = Osa1_funktsioonid.Pärt(nimi1, nimi2, "");
+            //    Console.WriteLine(con);
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
             //}
 
-            //3.
-            //Спроси длины стен прямоугольной комнаты и вычисли площадь пола.Спроси у пользователя,
-            //хочет ли он делать ремонт, если ответ положительный, спроси, сколько стоит квадратный метр, и вычисли стоимость замены пола.
-            try
-            {
-                Console.Write("Kui pikk on su põrand? ");
-                float pikk = float.Parse(Console.ReadLine());
-                Console.Write("Kui lai on su põrand? ");
-                float lai = float.Parse(Console.ReadLine());
+            //3. Ülesanne
+            //try
+            //{
+            //    Console.Write("Kui pikk on su põrand? ");
+            //    float pikk = float.Parse(Console.ReadLine());
+            //    Console.Write("Kui lai on su põrand? ");
+            //    float lai = float.Parse(Console.ReadLine());
+            //    float p = (Osa1_funktsioonid.Põrand(pikk, lai));
+            //    Console.Write($"Su seina {pikk}x{lai} pindala = {p} ");
 
-                Console.WriteLine("Kas sa tahad remonti teha? ");
-                string vastus = Console.ReadLine();
-                if (vastus.ToLower() != "jah")
-                {
-                    string S = (Osa1_funktsioonid.Põrand(pikk, lai));
-                    Console.WriteLine($"Su seina {pikk}x{lai} pindala = {S}");
-                    Console.WriteLine("Siis remonti ei tule.");
-                }
-                else
-                {
-                    Console.WriteLine("Kui palju maksab ruutmeeter?");
-                    float metr = float.Parse(Console.ReadLine());
-                    Console.WriteLine($"Su seina {pikk}x{lai} pindala = {S}");
-                    float E = (Osa1_funktsioonid.Põrand(metr, S));
-                    Console.WriteLine(E);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-           
-            //4.
+            //    Console.WriteLine("Kas sa tahad remonti teha? ");
+            //    string vastus = Console.ReadLine();
+            //    if (vastus.ToLower() != "jah")
+            //    {
+            //        Console.Write("Siis remonti ei tule. ");
+            //    }
+            //    else
+            //    {
+            //        Console.Write("Kui palju maksab ruutmeeter? ");
+            //        float m2hind = float.Parse(Console.ReadLine());
+            //        Console.Write($"Su seina {pikk}x{lai} pindala = {p} ");
+            //        float r = (Osa1_funktsioonid.Remont(m2hind, p));
+            //        Console.WriteLine($"Remondi hind on {r}.");
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
+
+            //4. Ülesanne
             //Найди исходную цену по цене с 30 % скидкой.
+            //V.1
+            //float a = float.Parse(Console.ReadLine());
+            //float b = 0.7f;
+            //float n = a / b;
+            //Console.WriteLine(n);
 
-            //5.
+            //V.2
+            //try
+            //{
+            //    Console.Write("Sisestage toote hind 30% soodustusega, et teada saada selle täishind. ");
+            //    float s_hind = float.Parse(Console.ReadLine());
+            //    float h = Osa1_funktsioonid.Thind(s_hind);
+            //    Console.WriteLine($"Täishind on {h}");
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
+
+            //5. Ülesanne
             //Спроси температуру и сообщи, превышает ли она восемнадцать градусов(рекомендуемая комнатная температура зимой).
+            //try
+            //{
+            //    Console.Write("Tere! Mis temperatuur praegu on? ");
+            //    int t = int.Parse(Console.ReadLine());
+            //    string vastus = Osa1_funktsioonid.Temperatuur(t);
+            //    Console.WriteLine(vastus);
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
 
-            //6.
+            //6. Ülesanne
             //Спроси рост человека и сообщи, он низкий, средний или высокий(пределы установи сам).
+            //try
+            //{
+            //    Console.WriteLine("Kui pikk sa oled?");
+            //    int p = int.Parse(Console.ReadLine());
+            //    string v = Osa1_funktsioonid.Pikkus(p);
+            //    Console.WriteLine(v);
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
 
-            //7.
+
+            //7. Ülesanne
             //Спроси рост и пол человека и сообщи, он низкий, средний или высокий(может быть несколько вложенных условий).
+            //Console.WriteLine("Tere!");
+            //Console.Write("Mis su sugu on?");
+            //string s = Console.ReadLine();
+            //Console.Write("Kui pikk sa oled?");
+            //int p = int.Parse(Console.ReadLine());
+            //if (s.ToLower() == "mees")
+            //{
+            //    string v = Osa1_funktsioonid.P_mees(p);
+            //    Console.WriteLine(v);
+            //}
+            //else if (s.ToLower() == "naine")
+            //{
+            //    string v = Osa1_funktsioonid.P_naine(p);
+            //    Console.WriteLine(v);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Viga andmetega");
+            //}
 
-            //8.
+            //8. Ülesanne
             //Спроси у человека, хочет ли он купить молоко, булочку, хлеб в магазине.Подсчитай стоимость и сообщи, сколько стоит весь купленный товар.
 
             //1.Osa C# Põhikonstruktsionid. Projekti loomine, ikooni lisamine ja arvutamine. Teoria+Praaktika
