@@ -12,7 +12,7 @@ namespace põhikonstruktsioonid
     {
         public static float Kalkulaator(float arv1, float arv2)
         {
-            float k=arv1 * arv2;
+            float k = arv1 * arv2;
             return k;
         }
         public static string Kuu_nimetus(int kuu_nr)
@@ -20,7 +20,7 @@ namespace põhikonstruktsioonid
             string kuu = "";
             switch (kuu_nr)
             {
-                case 1: kuu = "Jaanuar";break;
+                case 1: kuu = "Jaanuar"; break;
                 case 2: kuu = "Veebruar"; break;
                 case 3: kuu = "Märts"; break;
                 case 4: kuu = "Aprill"; break;
@@ -61,7 +61,7 @@ namespace põhikonstruktsioonid
             {
                 hoo = "???";
             }
-                return hoo;
+            return hoo;
         }
 
         //1. Ülesanne
@@ -234,10 +234,23 @@ namespace põhikonstruktsioonid
                 v = "Error";
             }
             return v;
-        }   
+        }
 
         //8. Ülesanne
         //Спроси у человека, хочет ли он купить молоко, булочку, хлеб в магазине.Подсчитай стоимость и сообщи, сколько стоит весь купленный товар.
-
+        public static float Hind(float k, float k2, float k3)
+        {
+            float p = 1.40f;
+            float s = 0.89f;
+            float l = 1.09f;
+            float p1 = k * p;
+            float s1 = k2 * s;
+            float l1 = k3 * l;
+            float ps = p1 + s1;
+            float pl = p1 + l1;
+            float ls = l1 + s1;
+            float pls = p1 + l1 + s1;
+            return (p1, s1, l1, ps, pl, ls, pls);
+        }
     }
 }

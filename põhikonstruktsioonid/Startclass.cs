@@ -185,6 +185,226 @@ namespace põhikonstruktsioonid
 
             //8. Ülesanne
             //Спроси у человека, хочет ли он купить молоко, булочку, хлеб в магазине.Подсчитай стоимость и сообщи, сколько стоит весь купленный товар.
+            Console.WriteLine("Tere!");
+
+            Console.Write("Mida te tahate osta: piima, saia või leiba?");
+            string t = Console.ReadLine();
+            if (t.ToLower() == "piim" || t.ToLower() == "piima")
+            {
+                Console.WriteLine("Mitu pakki te soovite osta?");
+                int k = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                string t2 = Console.ReadLine();
+                if (t2.ToLower() != "ei")
+                {
+                    if (t2.ToLower() == "sai" || t2.ToLower() == "saia")
+                    {
+                        Console.WriteLine("Mitu tükki te soovite osta?");
+                        int k2 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                        string t3 = Console.ReadLine();
+                        if (t3.ToLower() != "ei")
+                        {
+                            if (t3.ToLower() == "leib" || t3.ToLower() == "leiba")
+                            {
+                                Console.WriteLine("Mitu tükki te soovite osta?");
+                                int k3 = int.Parse(Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Vale andmed!");
+                            }
+                        }
+                        else
+                        {
+                            //подщет суми
+                        }
+                    }
+                    else if (t2.ToLower() == "leib" || t2.ToLower() == "leiba")
+                    {
+                        Console.WriteLine("Mitu tükki te soovite osta?");
+                        int k3 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                        string t3 = Console.ReadLine();
+                        if (t3.ToLower() != "ei")
+                        {
+                            if (t3.ToLower() == "sai" || t3.ToLower() == "saia")
+                            {
+                                Console.WriteLine("Mitu tükki te soovite osta?");
+                                int k2 = int.Parse(Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Vale andmed!");
+                            }
+                        }
+                        else
+                        {
+                            //подщет суми
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vale andmed!");
+                    }
+                }
+                else
+                {
+                    //подщет суми
+                }
+            }
+
+
+
+            else if (t.ToLower() == "sai" || t.ToLower() == "saia")
+            {
+                Console.WriteLine("Mitu tükki te soovite osta?");
+                int k2 = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                string t2 = Console.ReadLine();
+                if (t2.ToLower() != "ei")
+                {
+                    if (t2.ToLower() == "piim" || t2.ToLower() == "piima")
+                    {
+                        Console.WriteLine("Mitu tükki te soovite osta?");
+                        int k = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                        string t3 = Console.ReadLine();
+                        if (t3.ToLower() != "ei")
+                        {
+                            if (t3.ToLower() == "leib" || t3.ToLower() == "leiba")
+                            {
+                                Console.WriteLine("Mitu tükki te soovite osta?");
+                                int k3 = int.Parse(Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Vale andmed!");
+                            }
+                        }
+                        else
+                        {
+                            //подщет суми
+                        }
+                    }
+                    else if (t2.ToLower() == "leib" || t2.ToLower() == "leiba")
+                    {
+                        Console.WriteLine("Mitu tükki te soovite osta?");
+                        int k3 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                        string t3 = Console.ReadLine();
+                        if (t3.ToLower() != "ei")
+                        {
+                            if (t3.ToLower() == "piim" || t3.ToLower() == "piima")
+                            {
+                                Console.WriteLine("Mitu tükki te soovite osta?");
+                                int k = int.Parse(Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Vale andmed!");
+                            }
+                        }
+                        else
+                        {
+                            //подщет суми
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vale andmed!");
+                    }
+                }
+                else
+                {
+                    //подщет суми
+                }
+            }
+
+
+
+            else if (t.ToLower() == "leib" || t.ToLower() == "leiba")
+            {
+                Console.WriteLine("Mitu tükki te soovite osta?");
+                int k3 = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                string t2 = Console.ReadLine();
+                if (t2.ToLower() != "ei")
+                {
+                    if (t2.ToLower() == "piim" || t2.ToLower() == "piima")
+                    {
+                        Console.WriteLine("Mitu tükki te soovite osta?");
+                        int k = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                        string t3 = Console.ReadLine();
+                        if (t3.ToLower() != "ei")
+                        {
+                            if (t3.ToLower() == "sai" || t3.ToLower() == "saia")
+                            {
+                                Console.WriteLine("Mitu tükki te soovite osta?");
+                                int k2 = int.Parse(Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Vale andmed!");
+                            }
+                        }
+                        else
+                        {
+                            //подщет суми
+                        }
+                    }
+                    else if (t2.ToLower() == "sai" || t2.ToLower() == "saia")
+                    {
+                        Console.WriteLine("Mitu tükki te soovite osta?");
+                        int k2 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Kas te soovite nimekirjast veel midagi osta (kui jah, siis mida)?");
+                        string t3 = Console.ReadLine();
+                        if (t3.ToLower() != "ei")
+                        {
+                            if (t3.ToLower() == "piim" || t3.ToLower() == "piima")
+                            {
+                                Console.WriteLine("Mitu tükki te soovite osta?");
+                                int k = int.Parse(Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.WriteLine("Vale andmed!");
+                            }
+                        }
+                        else
+                        {
+                            //подщет суми
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vale andmed!");
+                    }
+                }
+                else
+                {
+                    //подщет суми
+                }
+            }
+            else
+            {
+                Console.WriteLine("Vale andmed!");
+            }
+
+
+
+            //Console.WriteLine("Mitu tükki (pakki) te soovite osta?");
+            //Console.WriteLine("Kas te tahate osta piima, saiakese, leiba?");
 
             //1.Osa C# Põhikonstruktsionid. Projekti loomine, ikooni lisamine ja arvutamine. Teoria+Praaktika
 
