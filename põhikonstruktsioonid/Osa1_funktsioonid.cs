@@ -136,7 +136,6 @@ namespace põhikonstruktsioonid
         }
 
         //5. Ülesanne
-        //Спроси температуру и сообщи, превышает ли она восемнадцать градусов(рекомендуемая комнатная температура зимой).
         public static string Temperatuur(float t)
         {
             string v = "";
@@ -160,7 +159,6 @@ namespace põhikonstruktsioonid
         }
 
         //6. Ülesanne
-        //Спроси рост человека и сообщи, он низкий, средний или высокий(пределы установи сам).
         public static string Pikkus(float p)
         {
             string v = "";
@@ -184,7 +182,6 @@ namespace põhikonstruktsioonid
         }
 
         //7. Ülesanne
-        //Спроси рост и пол человека и сообщи, он низкий, средний или высокий(может быть несколько вложенных условий).
         public static string P_mees(int p)
         {
             string v = "";
@@ -237,7 +234,6 @@ namespace põhikonstruktsioonid
         }
 
         //8. Ülesanne
-        //Спроси у человека, хочет ли он купить молоко, булочку, хлеб в магазине.Подсчитай стоимость и сообщи, сколько стоит весь купленный товар.
         public static float Hind(float k, float k2, float k3)
         {
             float p = 1.40f;
@@ -250,7 +246,7 @@ namespace põhikonstruktsioonid
             float pl = p1 + l1;
             float ls = l1 + s1;
             float pls = p1 + l1 + s1;
-            return (p1, s1, l1, ps, pl, ls, pls);
+            return pls;
         }
     }
 }
