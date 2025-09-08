@@ -25,7 +25,7 @@ namespace põhikonstruktsioonid
             //}
 
             //int[] arvud = new int[10];
-            int j = 0;
+            //int j = 0;
             //while (j < 10)
             //{
             //    Console.WriteLine(j + 1);
@@ -37,24 +37,143 @@ namespace põhikonstruktsioonid
             //    Console.WriteLine(arv);
             //}
 
-            List<Isik> isikud = new List<Isik>();
-            j = 0;
-            do
-            {
-                Console.Write(j + 1);
-                Isik isik = new Isik();
-                Console.Write(". Eesnimi: ");
-                isik.eesnimi = Console.ReadLine();
-                isikud.Add(isik);
-                j++;
-            } while (j < 10);
-            isikud.Sort((x, y) => x.eesnimi.CompareTo(y.eesnimi));
-            Console.WriteLine($"Kokku on: {isikud.Count()} isikud");
-            foreach (Isik isik in isikud)
-            {
-                isik.Prindi_andmed();            
-            }
-            Console.WriteLine($"Kolmandal kohal on: {isikud[2]} isik");
+            //List<Isik> isikud = new List<Isik>();
+            //j = 0;
+            //do
+            //{
+            //    Console.Write(j + 1);
+            //    Isik isik = new Isik();
+            //    Console.Write(". Eesnimi: ");
+            //    isik.eesnimi = Console.ReadLine();
+            //    isikud.Add(isik);
+            //    j++;
+            //} while (j < 10);
+            //isikud.Sort((x, y) => x.eesnimi.CompareTo(y.eesnimi));
+            //Console.WriteLine($"Kokku on: {isikud.Count()} isikud");
+            //foreach (Isik isik in isikud)
+            //{
+            //    isik.Prindi_andmed();            
+            //}
+            //Console.WriteLine($"Kolmandal kohal on: {isikud[2]} isik");
+
+
+
+
+
+
+
+
+            //1. Ülesanne - Квадраты случайных чисел
+            //Задание:
+            //Создайте класс ArvuTöötlus с методом GenereeriRuudud(int min, int max), который:
+            //Генерирует 2 случайных целых числа в диапазоне[-100, 100] → N и M,
+            //Находит все целые числа между ними(от меньшего к большему),
+            //Возвращает массив, где каждое значение — квадрат соответствующего числа.
+            //В методе Main выведите все результаты вместе с исходным значением(например, "4 → 16").
+            int[] arv = new int[10];
+            int min = -100;
+            int max = 100;
+            int N = rnd.Next(min, max);
+            Console.WriteLine(N);
+            int M = rnd.Next(min, max);
+
+
+
+            //2. Ülesanne - Анализ пяти чисел
+            //Задание:
+            //Создайте метод AnalüüsiArve(double[] arvud), который:
+            //Принимает массив в качестве входных данных(пользователь вводит через метод Tekstist_arvud()),
+            //Возвращает кортеж Tuple<double, double, double> — сумма, среднее, произведение,
+            //Выводит результат в удобном формате.
+            double[] arvud = Osa3_funktsioonid.Tekstist_arvud();
+            var tulemus = Osa3_funktsioonid.AnalüüsiArve(arvud);
+            Console.WriteLine();
+
+            //3. Ülesanne - Имена и возраст
+            //Задание:
+            //Создайте класс Inimene с полями { string Nimi; int Vanus; }.
+            //Создайте метод Statistika(List < Inimene > inimesed), который:
+            //Вычисляет сумму и средний возраст всех,
+            //Находит самого старого и самого младшего человека,
+            //Возвращает значения в кортеже Tuple<int, double, Inimene, Inimene>.
+            //Пользователь вводит 5 человек(имя и возраст отдельно).
+
+
+            //4. Ülesanne - "Купи слона!"
+            //Задание:
+            //Сделайте метод повторного ввода KuniMärksõnani(string märksõna, string fraas), который:
+            //Запрашивает ввод пользователя до тех пор, пока введённое не будет точно совпадать с ключевым словом,
+            //Перед каждым вводом выводит фразу,
+            //Все введённые значения сохраняет и выводит в конце.
+
+            //5. Ülesanne - Игра угадай число
+            //Задание:
+            //Компьютер выбирает случайное число от 1 до 100.
+            //Пользователю даётся 5 попыток.
+            //Создайте метод ArvaArv(), который:
+            //При каждой попытке сообщает, число слишком большое, слишком маленькое или правильное,
+            //Игра заканчивается при угадывании или после 5 попыток.
+
+            //Дополнительно: после игры спрашивайте, хочет ли пользователь сыграть снова.
+
+            //Наибольшее четырёхзначное число
+
+            //1. Ülesanne
+            //Задание:
+            //Попросите пользователя ввести 4 числа(например, 1, 5, 7, 3).
+            //Цель: составить из них наибольшее возможное четырёхзначное число(1573).
+            //Создайте метод SuurimNeljarv(double[] arvud), который:
+
+            //            Проверяет, что введённые значения — однозначные целые числа(0–9),
+
+            //Комбинирует их в максимально возможное четырёхзначное число.
+
+            //Таблица умножения
+
+            //1. Ülesanne
+            //Задание:
+            //            Напишите метод GenereeriKorrutustabel(int ridadeArv, int veergudeArv), который:
+
+            //            Создаёт и выводит таблицу умножения в заданных пользователем пределах,
+
+            //Использует красивое форматирование с выравниванием(например, PadLeft, String.Format).
+
+            //Бонус: сохраняет результаты в двумерный массив int[,] и позволяет потом искать любое значение(например, "какое число в 7 x 8?").
+
+            //Работа с учениками
+
+            //Дан массив из 10 имён учеников.
+            //Напишите программу, которая:
+
+            //Заменяет имена 3 - го и 6 - го учеников на "Kati" и "Mati",
+
+            //Использует цикл while, чтобы приветствовать только тех учеников, чьё имя начинается с буквы "A",
+
+            //Использует цикл for, чтобы вывести все имена и их индексы,
+
+            //Использует цикл foreach, чтобы вывести все имена в нижнем регистре,
+
+            //Использует цикл do -while, чтобы приветствовать учеников, пока не встретится имя "Mati".
+
+            //Квадраты чисел
+
+            //Дан массив целых чисел:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             //    //2.Osa C# Valikute konstruktsionid. Teoria+Ülesanded
             //    Console.OutputEncoding = Encoding.UTF8;
