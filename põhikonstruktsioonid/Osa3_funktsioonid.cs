@@ -128,6 +128,7 @@ namespace põhikonstruktsioonid
                 Console.Write("Sisesta üks arv");
                 Console.ReadLine();
             }
+            return arvud.Length;
         }
     }
 }
