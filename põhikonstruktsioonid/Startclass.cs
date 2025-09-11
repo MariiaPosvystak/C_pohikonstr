@@ -70,12 +70,12 @@ namespace põhikonstruktsioonid
             //Находит все целые числа между ними(от меньшего к большему),
             //Возвращает массив, где каждое значение — квадрат соответствующего числа.
             //В методе Main выведите все результаты вместе с исходным значением(например, "4 → 16").
-            int[] arv = new int[10];
-            int min = -100;
-            int max = 100;
-            int N = rnd.Next(min, max);
-            Console.WriteLine(N);
-            int M = rnd.Next(min, max);
+            //int[] arv = new int[10];
+            //int min = -100;
+            //int max = 100;
+            //int N = rnd.Next(min, max);
+            //Console.WriteLine(N);
+            //int M = rnd.Next(min, max);
 
 
 
@@ -85,9 +85,9 @@ namespace põhikonstruktsioonid
             //Принимает массив в качестве входных данных(пользователь вводит через метод Tekstist_arvud()),
             //Возвращает кортеж Tuple<double, double, double> — сумма, среднее, произведение,
             //Выводит результат в удобном формате.
-            double[] arvud = Osa3_funktsioonid.Tekstist_arvud();
-            var tulemus = Osa3_funktsioonid.AnalüüsiArve(arvud);
-            Console.WriteLine();
+            //double[] arvud = Osa3_funktsioonid.Tekstist_arvud();
+            //var tulemus = Osa3_funktsioonid.AnalüüsiArve(arvud);
+            //Console.WriteLine();
 
             //3. Ülesanne - Имена и возраст
             //Задание:
@@ -98,6 +98,33 @@ namespace põhikonstruktsioonid
             //Возвращает значения в кортеже Tuple<int, double, Inimene, Inimene>.
             //Пользователь вводит 5 человек(имя и возраст отдельно).
 
+            //List<Inimene> inimesed = new List<Inimene>();
+            //int l = 0;
+            //do
+            //{
+            //    Console.WriteLine(l + 1);
+            //    Inimene inimene = new Inimene();
+            //    Console.Write("Nimi: ");
+            //    inimene.nimi = Console.ReadLine();
+            //    Console.Write("Vanus: ");
+            //    try
+            //    {
+            //        inimene.vanus = int.Parse(Console.ReadLine());
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.WriteLine("Palun sisesta korrektne vanus");
+            //        continue;
+            //    }
+            //    inimesed.Add(inimene);
+            //    l++;
+            //} while (l < 5);
+            //var statistika = Inimene.Statistika(inimesed);
+            //Console.WriteLine($"Kõigi inimeste vanuste summa: {statistika.Item1}");
+            //Console.WriteLine($"Keskmine vanus: {statistika.Item2:F2}");
+            //Console.WriteLine($"Vanim inimene: {statistika.Item3}");
+            //Console.WriteLine($"Noorim inimene: {statistika.Item4}");
+
 
             //4. Ülesanne - "Купи слона!"
             //Задание:
@@ -106,6 +133,9 @@ namespace põhikonstruktsioonid
             //Перед каждым вводом выводит фразу,
             //Все введённые значения сохраняет и выводит в конце.
 
+            //Console.Write("Sisesta märksõna: ");
+            //Console.WriteLine();
+
             //5. Ülesanne - Игра угадай число
             //Задание:
             //Компьютер выбирает случайное число от 1 до 100.
@@ -113,51 +143,41 @@ namespace põhikonstruktsioonid
             //Создайте метод ArvaArv(), который:
             //При каждой попытке сообщает, число слишком большое, слишком маленькое или правильное,
             //Игра заканчивается при угадывании или после 5 попыток.
-
             //Дополнительно: после игры спрашивайте, хочет ли пользователь сыграть снова.
 
-            //Наибольшее четырёхзначное число
+            Random rn = new Random();
+            int arv = rn.Next(0, 100);
+            Console.WriteLine(Osa3_funktsioonid.ArvaArv(arv));
 
-            //1. Ülesanne
+
+            //6. Ülesanne - Наибольшее четырёхзначное число
             //Задание:
             //Попросите пользователя ввести 4 числа(например, 1, 5, 7, 3).
             //Цель: составить из них наибольшее возможное четырёхзначное число(1573).
             //Создайте метод SuurimNeljarv(double[] arvud), который:
-
-            //            Проверяет, что введённые значения — однозначные целые числа(0–9),
-
+            //Проверяет, что введённые значения — однозначные целые числа(0–9),
             //Комбинирует их в максимально возможное четырёхзначное число.
 
-            //Таблица умножения
 
-            //1. Ülesanne
+
+            //7. Ülesanne - Таблица умножения
             //Задание:
-            //            Напишите метод GenereeriKorrutustabel(int ridadeArv, int veergudeArv), который:
-
-            //            Создаёт и выводит таблицу умножения в заданных пользователем пределах,
-
+            //Напишите метод GenereeriKorrutustabel(int ridadeArv, int veergudeArv), который:
+            //оздаёт и выводит таблицу умножения в заданных пользователем пределах,
             //Использует красивое форматирование с выравниванием(например, PadLeft, String.Format).
+            //Бонус: сохраняет результаты в двумерный массив int[,]
+            //и позволяет потом искать любое значение(например, "какое число в 7 x 8?").
 
-            //Бонус: сохраняет результаты в двумерный массив int[,] и позволяет потом искать любое значение(например, "какое число в 7 x 8?").
-
-            //Работа с учениками
-
+            //8. Ülesanne - Работа с учениками
             //Дан массив из 10 имён учеников.
             //Напишите программу, которая:
-
             //Заменяет имена 3 - го и 6 - го учеников на "Kati" и "Mati",
-
-            //Использует цикл while, чтобы приветствовать только тех учеников, чьё имя начинается с буквы "A",
-
+            //Использует цикл while, чтобы приветствовать только тех учеников,
+            //чьё имя начинается с буквы "A",
             //Использует цикл for, чтобы вывести все имена и их индексы,
-
             //Использует цикл foreach, чтобы вывести все имена в нижнем регистре,
-
-            //Использует цикл do -while, чтобы приветствовать учеников, пока не встретится имя "Mati".
-
-            //Квадраты чисел
-
-            //Дан массив целых чисел:
+            //Использует цикл do -while, чтобы приветствовать учеников,
+            //пока не встретится имя "Mati".
 
 
 
