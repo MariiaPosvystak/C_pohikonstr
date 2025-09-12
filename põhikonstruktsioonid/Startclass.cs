@@ -12,7 +12,56 @@ namespace põhikonstruktsioonid
         {
             Random rnd = new Random();
             Console.OutputEncoding = Encoding.UTF8;
+
+            //Osa 5
+            //сделать конспект и выполнить задание 1
+            Osa5_funktsioonid.ArrayList();
+
+            Tuple<float, char> route = new Tuple<float, char>(2.5f, 'N');
+            Console.WriteLine($"Vahemaa: {route.Item1}, Suund: {route.Item2}");
+
+            Osa5_funktsioonid.List();
+            Osa5_funktsioonid.LinkedList();
+            Osa5_funktsioonid.Dictionary();
+            Osa5_funktsioonid.Dictionary2();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //Osa 4 
+            //проверить коды и доделать конспект
+            //Osa4_funktsioonid.Kirjuta_failisse();
+            //Console.WriteLine("Sisesta faili nimi: ");
+            //string failinimi = Console.ReadLine();
+            //Osa4_funktsioonid.Faili_lugemine(failinimi);
+            //Console.WriteLine("Sisesta faili nimi: ");
+            //string fail = Console.ReadLine();
+            //Osa4_funktsioonid.Ridade_lugemine(fail);
+            //Osa4_funktsioonid.Listi_muutmine_kuvamine();
+
+
+
+
+
+
+
             //3.Osa Massiivid, List, Kordused
+            //выолнить задания и перепроверить
             //List<string> nimed = new List<string>();
             //for (int i = 0; i < 10; i++)
             //{
@@ -145,9 +194,9 @@ namespace põhikonstruktsioonid
             //Игра заканчивается при угадывании или после 5 попыток.
             //Дополнительно: после игры спрашивайте, хочет ли пользователь сыграть снова.
 
-            Random rn = new Random();
-            int arv = rn.Next(0, 100);
-            Console.WriteLine(Osa3_funktsioonid.ArvaArv(arv));
+            //Random rn = new Random();
+            //int arv = rn.Next(0, 100);
+            //Console.WriteLine(Osa3_funktsioonid.ArvaArv(arv));
 
 
             //6. Ülesanne - Наибольшее четырёхзначное число
@@ -158,15 +207,23 @@ namespace põhikonstruktsioonid
             //Проверяет, что введённые значения — однозначные целые числа(0–9),
             //Комбинирует их в максимально возможное четырёхзначное число.
 
-
+            //int[] arvud = new int[4];
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Console.Write("Sisesta üks arv: ");
+            //    Console.ReadLine();
+            //}
+            //Console.WriteLine(Osa3_funktsioonid.SuurimNeljarv(arvud));
 
             //7. Ülesanne - Таблица умножения
             //Задание:
             //Напишите метод GenereeriKorrutustabel(int ridadeArv, int veergudeArv), который:
-            //оздаёт и выводит таблицу умножения в заданных пользователем пределах,
+            //cоздаёт и выводит таблицу умножения в заданных пользователем пределах,
             //Использует красивое форматирование с выравниванием(например, PadLeft, String.Format).
             //Бонус: сохраняет результаты в двумерный массив int[,]
             //и позволяет потом искать любое значение(например, "какое число в 7 x 8?").
+
+
 
             //8. Ülesanne - Работа с учениками
             //Дан массив из 10 имён учеников.
@@ -179,7 +236,20 @@ namespace põhikonstruktsioonid
             //Использует цикл do -while, чтобы приветствовать учеников,
             //пока не встретится имя "Mati".
 
-
+            //List<string> nimed = new List<string>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.Write($"{i + 1}. Nimi: ");
+            //    nimed.Add(Console.ReadLine());
+            //}
+            //while (nimed == )
+            //{
+            //    Console.WriteLine(nimed);
+            //}
+            //foreach (string nimi in nimed)
+            //{
+            //    Console.WriteLine(nimi);
+            //}
 
 
 

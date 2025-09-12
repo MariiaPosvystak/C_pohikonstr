@@ -123,12 +123,22 @@ namespace põhikonstruktsioonid
 
         public static int SuurimNeljarv(int[] arvud)
         {
-            for (int i = 0;i < 4;i++)
-            {
-                Console.Write("Sisesta üks arv");
-                Console.ReadLine();
-            }
-            return arvud.Length;
+            Array.Sort(arvud);
+            Array.Reverse(arvud);
+            int summ = arvud[0] * 1000 + arvud[1] * 100 + arvud[2] * 10 + arvud[3];
+            return summ;
         }
+        //public static int GenereeriKorrutustabel(int ridadeArv, int veergudeArv)
+        //{
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        ridadeArv += ridadeArv;
+        //        veergudeArv += veergudeArv;
+        //        i++;
+        //        int m = ridadeArv * veergudeArv * i;
+                
+        //        return m;
+        //    }
+        //}
     }
 }
