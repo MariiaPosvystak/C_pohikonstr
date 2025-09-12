@@ -14,7 +14,7 @@ namespace põhikonstruktsioonid
             Console.OutputEncoding = Encoding.UTF8;
 
             //Osa 5
-            //сделать конспект и выполнить задание 1
+            //сделать конспект и выполнить задание 1 и 2
             Osa5_funktsioonid.ArrayList();
 
             Tuple<float, char> route = new Tuple<float, char>(2.5f, 'N');

@@ -14,7 +14,7 @@ namespace põhikonstruktsioonid
         int pikkus;
         float kaal;
         string aktiivsustase;
-        public Inimene(string nimi, int vanus, string sugu, int pikkus, float kaal, string akts)
+        public Inimene_k(string nimi, int vanus, string sugu, int pikkus, float kaal, string akts)
         {
             this.nimi = nimi;
             this.vanus = vanus;

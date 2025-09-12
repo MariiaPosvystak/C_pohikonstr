@@ -75,7 +75,7 @@ namespace põhikonstruktsioonid
             foreach (var entry in inimesed)
                 Console.WriteLine($"{entry.Key} - {entry.Value.Name}");
         }
-        public static void Kalori_kalkulaator()
+        public static void Kalorite_kalkulaator()
         {
 
         }
