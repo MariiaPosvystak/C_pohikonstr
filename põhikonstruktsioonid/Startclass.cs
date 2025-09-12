@@ -60,6 +60,7 @@ namespace põhikonstruktsioonid
 
 
 
+
             //3.Osa Massiivid, List, Kordused
             //выолнить задания и перепроверить
             //List<string> nimed = new List<string>();
