@@ -35,11 +35,36 @@ namespace põhikonstruktsioonid
             //Надає користувачеві список продуктів, де для кожного продукту розраховується, скільки його слід з'їдати на день (г), щоб покрити потреби в калоріях.
             //💡 Порада: поділивши калорії на калорії на 100 г = кількість у грамах.
 
-            Console.WriteLine("1. Ülesanne");
-            Console.WriteLine("Tere tulemast kalorite kalkulaatorisse!");
-            
-            Toode.SalvestaTootedFaili();
-            Inimene_k.SisestaAndmed();
+            //Console.WriteLine("1. Ülesanne");
+            //Console.WriteLine("Tere tulemast kalorite kalkulaatorisse!");
+
+            //Toode.SalvestaTootedFaili();
+            //Inimene_k.SisestaAndmed();
+
+            Console.WriteLine("2. Ülesanne");
+            Dictionary<string, string> maakonnad = new Dictionary<string, string>();
+            maakonnad.Add("Harju maakond", "Tallinn");
+            maakonnad.Add("Hiiu maakond", "Kärdla");
+            maakonnad.Add("Ida-Viru maakond", "Jõhvi");
+            maakonnad.Add("Järva maakond", "Paide");
+            maakonnad.Add("Lääne maakond", "Haapsalu");
+            Console.WriteLine("Tere! Tahad teada, mis maakonnad on ja mis nende pealinnad?");
+            string v = Console.ReadLine();
+            if (v.ToLower() == "jah")
+            {
+                Console.WriteLine("Kui tahad teada linna, sisesta maakond, aga kui tahad teada maakonda, sisesta linn.");
+                string vastus = Console.ReadLine();
+                Osa5_funktsioonid.Maakond_linnad(vastus, maakonnad);
+                Osa5_funktsioonid.Mang(maakonnad);
+            }
+            else if (v.ToLower() == "ei")
+            {
+                Console.WriteLine("Okei, head päeva!");
+            }
+            else
+            {
+                Console.WriteLine("Palun vasta jah või ei!");
+            }
         }
     }
 }
