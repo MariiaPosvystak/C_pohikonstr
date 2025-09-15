@@ -70,8 +70,7 @@ namespace põhikonstruktsioonid
             Dictionary<string, List<Film>> žanri = new Dictionary<string, List<Film>>();
             Film.Statistik(filmid, žanri);
             Film.Dict(žanri);
-            
-            
+            Film.UusimFilm(filmid);
         }
     }
 }

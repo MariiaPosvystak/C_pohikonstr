@@ -6,54 +6,54 @@ using System.Threading.Tasks;
 
 namespace põhikonstruktsioonid
 {
-    internal class Film
+    internal class Lemmikloom
     {
-        string Pealkiri;
-        int Aasta;
-        string Žanr;
-        public Film(string pealkiri, int aasta, string žanr)
+        string Nimi;
+        string Liik;
+        int Vanus;
+        public Lemmikloom(string nimi, string liik, int vanus)
         {
-        this.Pealkiri = pealkiri;
-        this.Aasta = aasta;
-        this.Žanr = žanr;
+            this.Nimi = nimi;
+            this.Liik = liik;
+            this.Vanus = vanus;
         }
         public void Greeting()
         {
-            Console.WriteLine($"Film: {Pealkiri}, Aasta: {Aasta}, Žanr: {Žanr}");
+            Console.WriteLine($"Liik: {Liik}, Nimi: {Nimi}, Vanus: {Vanus}.");
         }
-        public static void Statistik(List<Film> filmid, Dictionary<string, List<Film>> žanri)
+        public static void Statistik(List<Lemmikloom> loom, Dictionary<string, List<Lemmikloom>> liikid)
         {
             for (int i = 0; i < 5; i++)
             {
                 try
                 {
-                    Console.WriteLine("Sisestage filmi pealkiri");
-                    string pealkiri = Console.ReadLine();
-                    Console.WriteLine("Sisesta filmi ilmumisaasta");
-                    int aasta = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Sisestage filmižanr");
-                    string žanr = Console.ReadLine();
+                    Console.WriteLine("Sisestage lemmikloomi nimi");
+                    string nimi = Console.ReadLine();
+                    Console.WriteLine("Sisestage lemmikloomi liik");
+                    string liik = Console.ReadLine();
+                    Console.WriteLine("Sisesta lemikloomi vanus");
+                    int vanus = int.Parse(Console.ReadLine());
 
-                    Film newFilm = new Film(pealkiri, aasta, žanr);
-                    filmid.Add(newFilm);
+                    Lemmikloom newLemmikloom = new Lemmikloom(nimi, liik, vanus);
+                    filmid.Add(newLemmikloom);
 
-                    if (!žanri.ContainsKey(žanr))
+                    if (!liikid.ContainsKey(liik))
                     {
-                        žanri[žanr] = new List<Film>();
+                        liikid[liik] = new List<Lemmikloom>();
                     }
-                    žanri[žanr].Add(newFilm);
+                    liikid[liik].Add(newLemmikloom);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
                 }
             }
-            foreach (Film film in filmid)
+            foreach (Lemmikloom film in filmid)
             {
                 film.Greeting();
             }
         }
-        public static void Dict(Dictionary<string, List<Film>> žanri)
+        public static void Dict(Dictionary<string, List<Lemmikloom>> žanri)
         {
             Console.WriteLine("Kas soovite vaadata teatud žanri erinevaid filme? (jah/ei)");
             string vas = Console.ReadLine();
@@ -75,7 +75,7 @@ namespace põhikonstruktsioonid
                 }
             }
         }
-        public static void UusimFilm(List<Film> filmid)
+        public static void UusimFilm(List<Lemmikloom> filmid)
         {
             Console.WriteLine("Kas sa tahad näha uusimat filmi?");
             string vas = Console.ReadLine();
@@ -94,21 +94,7 @@ namespace põhikonstruktsioonid
             else
             {
                 Console.WriteLine("Oke, head aega");
-            }  
+            }
         }
     }
 }
-//string pealinn = filmid[2];
-//filmid[2] = "Eestimaa";
-//filmid.Remove(3);
-
-
-//Створіть клас Film, який має:
-//Pealkiri(рядок)
-//Aasta(ціл.)
-//Žanr(рядок)
-//Створіть List<Film>щонайменше 5 фільмів (вручну або за допомогою користувача).
-//Напишіть функції, які:
-//Знаходить усі фільми, що належать до певного жанру.
-//Вони знаходять найновіший фільм.
-//Групувати фільми за жанром (Dictionary<string, List<Film>>).
