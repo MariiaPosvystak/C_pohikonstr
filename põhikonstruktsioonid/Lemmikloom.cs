@@ -21,7 +21,7 @@ namespace põhikonstruktsioonid
         {
             Console.WriteLine($"Liik: {Liik}, Nimi: {Nimi}, Vanus: {Vanus}.");
         }
-        public static void Statistik(List<Lemmikloom> loom, Dictionary<string, List<Lemmikloom>> liikid)
+        public static void Statistik(List<Lemmikloom> loomid, Dictionary<string, List<Lemmikloom>> liikid)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -35,7 +35,7 @@ namespace põhikonstruktsioonid
                     int vanus = int.Parse(Console.ReadLine());
 
                     Lemmikloom newLemmikloom = new Lemmikloom(nimi, liik, vanus);
-                    filmid.Add(newLemmikloom);
+                    loomid.Add(newLemmikloom);
 
                     if (!liikid.ContainsKey(liik))
                     {
@@ -48,23 +48,24 @@ namespace põhikonstruktsioonid
                     Console.WriteLine(ex);
                 }
             }
-            foreach (Lemmikloom film in filmid)
+            foreach (Lemmikloom loom in loomid)
             {
-                film.Greeting();
+                loom.Greeting();
             }
         }
-        public static void Dict(Dictionary<string, List<Lemmikloom>> žanri)
+        //Доделать
+        public static void Dict(Dictionary<string, List<Lemmikloom>> liikid)
         {
             Console.WriteLine("Kas soovite vaadata teatud žanri erinevaid filme? (jah/ei)");
             string vas = Console.ReadLine();
             if (vas.ToLower() != "ei")
             {
                 Console.WriteLine("Mis žanri filme sa vaadata tahad?");
-                string žanr = Console.ReadLine();
+                string liik = Console.ReadLine();
 
-                if (žanri.ContainsKey(žanr))
+                if (liikid.ContainsKey(liik))
                 {
-                    foreach (Film film in žanri[žanr])
+                    foreach (Film film in liikid[liik])
                     {
                         Console.WriteLine($" {film.Pealkiri}, {film.Aasta}");
                     }
