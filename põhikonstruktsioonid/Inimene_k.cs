@@ -8,12 +8,12 @@ namespace põhikonstruktsioonid
 {
     internal class Inimene_k
     {
-        string nimi;
-        int vanus;
-        string sugu;
-        int pikkus;
-        float kaal;
-        string aktiivsustase;
+        public string nimi;
+        public int vanus;
+        public string sugu;
+        public int pikkus;
+        public float kaal;
+        public string aktiivsustase;
         public Inimene_k(string nimi, int vanus, string sugu, int pikkus, float kaal, string akts)
         {
             this.nimi = nimi;

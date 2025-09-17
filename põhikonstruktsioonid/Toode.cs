@@ -8,8 +8,8 @@ namespace põhikonstruktsioonid
 {
     internal class Toode
     {
-        string nimi;
-        float kalorid100g;
+        public string nimi;
+        public float kalorid100g;
         public Toode(string nimi, float kalorid)
         {
             this.nimi = nimi;

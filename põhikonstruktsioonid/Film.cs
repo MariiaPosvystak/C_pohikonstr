@@ -8,9 +8,9 @@ namespace põhikonstruktsioonid
 {
     internal class Film
     {
-        string Pealkiri;
-        int Aasta;
-        string Žanr;
+        public string Pealkiri;
+        public int Aasta;
+        public string Žanr;
         public Film(string pealkiri, int aasta, string žanr)
         {
         this.Pealkiri = pealkiri;
@@ -84,7 +84,7 @@ namespace põhikonstruktsioonid
                 if (filmid.Count > 0)
                 {
                     Film uusim = filmid.OrderByDescending(f => f.Aasta).First();
-                    Console.WriteLine($"\nUusim film on: {uusim.Pealkiri}, {uusim.Aasta}, {uusim.Žanr}");
+                    Console.WriteLine($"Uusim film on: {uusim.Pealkiri}, {uusim.Aasta}, {uusim.Žanr}");
                 }
                 else
                 {
@@ -98,17 +98,3 @@ namespace põhikonstruktsioonid
         }
     }
 }
-//string pealinn = filmid[2];
-//filmid[2] = "Eestimaa";
-//filmid.Remove(3);
-
-
-//Створіть клас Film, який має:
-//Pealkiri(рядок)
-//Aasta(ціл.)
-//Žanr(рядок)
-//Створіть List<Film>щонайменше 5 фільмів (вручну або за допомогою користувача).
-//Напишіть функції, які:
-//Знаходить усі фільми, що належать до певного жанру.
-//Вони знаходять найновіший фільм.
-//Групувати фільми за жанром (Dictionary<string, List<Film>>).

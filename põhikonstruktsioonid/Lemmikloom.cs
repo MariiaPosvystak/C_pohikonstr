@@ -8,9 +8,9 @@ namespace põhikonstruktsioonid
 {
     internal class Lemmikloom
     {
-        string Nimi;
-        string Liik;
-        int Vanus;
+        public string Nimi;
+        public string Liik;
+        public int Vanus;
         public Lemmikloom(string nimi, string liik, int vanus)
         {
             this.Nimi = nimi;
@@ -21,7 +21,7 @@ namespace põhikonstruktsioonid
         {
             Console.WriteLine($"Liik: {Liik}, Nimi: {Nimi}, Vanus: {Vanus}.");
         }
-        public static void Statistik(List<Lemmikloom> loomid, Dictionary<string, List<Lemmikloom>> liikid)
+        public static void Statistik(List<Lemmikloom> loomad, Dictionary<string, List<Lemmikloom>> liikid)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -35,7 +35,7 @@ namespace põhikonstruktsioonid
                     int vanus = int.Parse(Console.ReadLine());
 
                     Lemmikloom newLemmikloom = new Lemmikloom(nimi, liik, vanus);
-                    loomid.Add(newLemmikloom);
+                    loomad.Add(newLemmikloom);
 
                     if (!liikid.ContainsKey(liik))
                     {
@@ -48,48 +48,66 @@ namespace põhikonstruktsioonid
                     Console.WriteLine(ex);
                 }
             }
-            foreach (Lemmikloom loom in loomid)
+            foreach (Lemmikloom loom in loomad)
             {
                 loom.Greeting();
             }
         }
-        //Доделать
         public static void Dict(Dictionary<string, List<Lemmikloom>> liikid)
         {
-            Console.WriteLine("Kas soovite vaadata teatud žanri erinevaid filme? (jah/ei)");
+            Console.WriteLine("Tahad teada, millised koduloomad kuuluvad kasside perekonda?");
             string vas = Console.ReadLine();
             if (vas.ToLower() != "ei")
             {
-                Console.WriteLine("Mis žanri filme sa vaadata tahad?");
-                string liik = Console.ReadLine();
-
+                string liik = "kass";
                 if (liikid.ContainsKey(liik))
                 {
-                    foreach (Film film in liikid[liik])
+                    foreach (Lemmikloom loom in liikid[liik])
                     {
-                        Console.WriteLine($" {film.Pealkiri}, {film.Aasta}");
+                        Console.WriteLine($" {loom.Nimi}, {loom.Vanus}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"Žanr {žanr} ei leitud.");
+                    Console.WriteLine($"Loomad kass ei leitud.");
                 }
             }
         }
-        public static void UusimFilm(List<Lemmikloom> filmid)
+        public static void KeskmineVanus(List<Lemmikloom> loomad)
         {
-            Console.WriteLine("Kas sa tahad näha uusimat filmi?");
+            Console.WriteLine("Kas sa tahad näha keskmist vanust?");
             string vas = Console.ReadLine();
             if (vas.ToLower() != "ei")
             {
-                if (filmid.Count > 0)
+                if (loomad.Count > 0)
                 {
-                    Film uusim = filmid.OrderByDescending(f => f.Aasta).First();
-                    Console.WriteLine($"\nUusim film on: {uusim.Pealkiri}, {uusim.Aasta}, {uusim.Žanr}");
+                    double keskmine = loomad.Average(l => l.Vanus);
+                    Console.WriteLine($"Keskmine vanus on: {keskmine}");
                 }
                 else
                 {
-                    Console.WriteLine("Filmide nimekiri on tühi.");
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Oke, head aega");
+            }
+        }
+        public static void VanemLoom(List<Lemmikloom> loomad)
+        {
+            Console.WriteLine("Kas sa tahad näha vanemad loomad");
+            string vas = Console.ReadLine();
+            if (vas.ToLower() != "ei")
+            {
+                if (loomad.Count > 0)
+                {
+                    Lemmikloom vanem = loomad.OrderByDescending(l => l.Vanus).First();
+                    Console.WriteLine($"Vanemad loom on: {vanem.Nimi}, {vanem.Liik}, {vanem.Vanus}");
+                }
+                else
+                {
+                    Console.WriteLine();
                 }
             }
             else

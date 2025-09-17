@@ -449,150 +449,148 @@ namespace põhikonstruktsioonid
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-            //3.Osa Massiivid, List, Kordused
-            //выолнить задания и перепроверить
-            List<string> nimed = new List<string>();
-            for (int i = 0; i < 10; i++)
-            {
-                Console.Write($"{i + 1}. Nimi: ");
-                nimed.Add(Console.ReadLine());
-            }
-            foreach (string nimi in nimed)
-            {
-                Console.WriteLine(nimi);
-            }
+            ////3.Osa Massiivid, List, Kordused
+            //List<string> nimed = new List<string>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.Write($"{i + 1}. Nimi: ");
+            //    nimed.Add(Console.ReadLine());
+            //}
+            //foreach (string nimi in nimed)
+            //{
+            //    Console.WriteLine(nimi);
+            //}
 
-            int[] arvud = new int[10];
-            int j = 0;
-            while (j < 10)
-            {
-                Console.WriteLine(j + 1);
-                arvud[j] = rnd.Next(1, 101);
-                j++;
-            }
-            foreach (int arv in arvud)
-            {
-                Console.WriteLine(arv);
-            }
+            //int[] arvud = new int[10];
+            //int j = 0;
+            //while (j < 10)
+            //{
+            //    Console.WriteLine(j + 1);
+            //    arvud[j] = rnd.Next(1, 101);
+            //    j++;
+            //}
+            //foreach (int arv in arvud)
+            //{
+            //    Console.WriteLine(arv);
+            //}
 
-            List<Isik> isikud = new List<Isik>();
-            j = 0;
-            do
-            {
-                Console.Write(j + 1);
-                Isik isik = new Isik();
-                Console.Write(". Eesnimi: ");
-                isik.eesnimi = Console.ReadLine();
-                isikud.Add(isik);
-                j++;
-            } while (j < 10);
-            isikud.Sort((x, y) => x.eesnimi.CompareTo(y.eesnimi));
-            Console.WriteLine($"Kokku on: {isikud.Count()} isikud");
-            foreach (Isik isik in isikud)
-            {
-                isik.Prindi_andmed();
-            }
-            Console.WriteLine($"Kolmandal kohal on: {isikud[2]} isik");
+            //List<Isik> isikud = new List<Isik>();
+            //j = 0;
+            //do
+            //{
+            //    Console.Write(j + 1);
+            //    Isik isik = new Isik();
+            //    Console.Write(". Eesnimi: ");
+            //    isik.eesnimi = Console.ReadLine();
+            //    isikud.Add(isik);
+            //    j++;
+            //} while (j < 10);
+            //isikud.Sort((x, y) => x.eesnimi.CompareTo(y.eesnimi));
+            //Console.WriteLine($"Kokku on: {isikud.Count()} isikud");
+            //foreach (Isik isik in isikud)
+            //{
+            //    isik.Prindi_andmed();
+            //}
+            //Console.WriteLine($"Kolmandal kohal on: {isikud[2]} isik");
 
-            //1. Ülesanne
-            ArvuTöötlus.GenereeriRuudud(-100, 100);
+            ////1. Ülesanne
+            //ArvuTöötlus.GenereeriRuudud(-100, 100);
 
-            //2. Ülesanne
-            double[] arvud1 = Osa3_funktsioonid.Tekstist_arvud();
-            var tulemus = Osa3_funktsioonid.AnalüüsiArve(arvud1);
-            Console.WriteLine($"Summa: {tulemus.Item1:F2}, Keskmine: {tulemus.Item2:F2}, Korrutis: {tulemus.Item3:F2}");
+            ////2. Ülesanne
+            //double[] arvud1 = Osa3_funktsioonid.Tekstist_arvud();
+            //var tulemus = Osa3_funktsioonid.AnalüüsiArve(arvud1);
+            //Console.WriteLine($"Summa: {tulemus.Item1:F2}, Keskmine: {tulemus.Item2:F2}, Korrutis: {tulemus.Item3:F2}");
 
-            //3. Ülesanne
-            List<Inimene> inimesed = new List<Inimene>();
-            int l = 0;
-            do
-            {
-                Console.WriteLine(l + 1);
-                Inimene inimene = new Inimene();
-                Console.Write("Nimi: ");
-                inimene.nimi = Console.ReadLine();
-                Console.Write("Vanus: ");
-                try
-                {
-                    inimene.vanus = int.Parse(Console.ReadLine());
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Palun sisesta korrektne vanus");
-                    continue;
-                }
-                inimesed.Add(inimene);
-                l++;
-            } while (l < 5);
-            var statistika = Inimene.Statistika(inimesed);
-            Console.WriteLine($"Kõigi inimeste vanuste summa: {statistika.Item1}");
-            Console.WriteLine($"Keskmine vanus: {statistika.Item2:F2}");
-            Console.WriteLine($"Vanim inimene: {statistika.Item3}");
-            Console.WriteLine($"Noorim inimene: {statistika.Item4}");
-
-
-            // 4. Ülesanne
-            Console.Write("Sisesta märksõna: ");
-            string märksõna = Console.ReadLine();
-            Osa3_funktsioonid.KuniMärksõnani(märksõna, "Osta elevant ära! ");
-
-            // 5. Ülesanne
-            Osa3_funktsioonid.ArvaArv();
-
-            // 6. Ülesanne
-            int[] neliArvu = new int[4];
-            for (int i = 0; i < 4; i++)
-            {
-                Console.Write($"Sisesta {i + 1}. ühekohaline arv (0-9): ");
-                while (true)
-                {
-                    string sisend = Console.ReadLine() ?? "";
-                    int arv;
-                    if (int.TryParse(sisend, out arv) && arv >= 0 && arv <= 9)
-                    {
-                        neliArvu[i] = arv;
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Viga: sisesta ühekohaline täisarv (0-9)!");
-                    }
-                }
-            }
-            int suurimNeljarv = Osa3_funktsioonid.SuurimNeliarv(neliArvu);
-            Console.WriteLine($"Suurim võimalik neljakohaline arv: {suurimNeljarv}");
-
-            //7. Ülesanne
-            Console.Write("Sisesta veergude arv: ");
-            int veergudeArv = int.Parse(Console.ReadLine());
-            int ridadeArv = int.Parse(Console.ReadLine());
-            var korrutustabel = Osa3_funktsioonid.GenereeriKorrutustabel(ridadeArv, veergudeArv);
-            Osa3_funktsioonid.KysiKorrutustabelist(korrutustabel);
-
-            // 8. Ülesanne
-            string[] opilased = new string[10];
-            for (int i = 0; i < 10; i++)
-            {
-                Console.Write($"Sisesta {i + 1}. õpilase nimi: ");
-                opilased[i] = Console.ReadLine();
-            }
-            Osa3_funktsioonid.OpilasteMäng(opilased);
-
-            // 9. Ülesanne
-            int[] arvud9 = { 2, 4, 6, 8, 10, 12 };
-            Osa3_funktsioonid.ArvudeRuududJaKahekordsed(arvud9);
-
-            // 10. Ülesanne
-            int[] arvud10 = { 5, -3, 0, 8, -1, 4, -7, 2, 0, -5, 6, 9 };
-            Osa3_funktsioonid.PositiivsedNegatiivsedNullid(arvud10);
+            ////3. Ülesanne
+            //List<Inimene> inimesed = new List<Inimene>();
+            //int l = 0;
+            //do
+            //{
+            //    Console.WriteLine(l + 1);
+            //    Inimene inimene = new Inimene();
+            //    Console.Write("Nimi: ");
+            //    inimene.nimi = Console.ReadLine();
+            //    Console.Write("Vanus: ");
+            //    try
+            //    {
+            //        inimene.vanus = int.Parse(Console.ReadLine());
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.WriteLine("Palun sisesta korrektne vanus");
+            //        continue;
+            //    }
+            //    inimesed.Add(inimene);
+            //    l++;
+            //} while (l < 5);
+            //var statistika = Inimene.Statistika(inimesed);
+            //Console.WriteLine($"Kõigi inimeste vanuste summa: {statistika.Item1}");
+            //Console.WriteLine($"Keskmine vanus: {statistika.Item2:F2}");
+            //Console.WriteLine($"Vanem inimene: {statistika.Item3}");
+            //Console.WriteLine($"Noorem inimene: {statistika.Item4}");
 
 
+            //// 4. Ülesanne
+            //Console.Write("Sisesta märksõna: ");
+            //string märksõna = Console.ReadLine();
+            //Osa3_funktsioonid.KuniMärksõnani(märksõna, "Osta elevant ära! ");
 
-//----------------------------------------------------------------------------------------------------------------------------------------------------
+            //// 5. Ülesanne
+            //Osa3_funktsioonid.ArvaArv();
+
+            //// 6. Ülesanne
+            //int[] neliArvu = new int[4];
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Console.Write($"Sisesta {i + 1}. ühekohaline arv (0-9): ");
+            //    while (true)
+            //    {
+            //        string sisend = Console.ReadLine() ?? "";
+            //        int arv;
+            //        if (int.TryParse(sisend, out arv) && arv >= 0 && arv <= 9)
+            //        {
+            //            neliArvu[i] = arv;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Viga: sisesta ühekohaline täisarv (0-9)!");
+            //        }
+            //    }
+            //}
+            //int suurimNeljarv = Osa3_funktsioonid.SuurimNeliarv(neliArvu);
+            //Console.WriteLine($"Suurim võimalik neljakohaline arv: {suurimNeljarv}");
+
+            ////7. Ülesanne
+            //Console.Write("Sisesta veergude arv: ");
+            //int veergudeArv = int.Parse(Console.ReadLine());
+            //int ridadeArv = int.Parse(Console.ReadLine());
+            //var korrutustabel = Osa3_funktsioonid.GenereeriKorrutustabel(ridadeArv, veergudeArv);
+            //Osa3_funktsioonid.KysiKorrutustabelist(korrutustabel);
+
+            //// 8. Ülesanne
+            //string[] opilased = new string[10];
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.Write($"Sisesta {i + 1}. õpilase nimi: ");
+            //    opilased[i] = Console.ReadLine();
+            //}
+            //Osa3_funktsioonid.OpilasteMäng(opilased);
+
+            //// 9. Ülesanne
+            //int[] arvud9 = { 2, 4, 6, 8, 10, 12 };
+            //Osa3_funktsioonid.ArvudeRuududJaKahekordsed(arvud9);
+
+            //// 10. Ülesanne
+            //int[] arvud10 = { 5, -3, 0, 8, -1, 4, -7, 2, 0, -5, 6, 9 };
+            //Osa3_funktsioonid.PositiivsedNegatiivsedNullid(arvud10);
 
 
-            ////Osa 4 
-            ////проверить коды и доделать конспект
+
+            //----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+            ////Osa 4 C# Failitöötlus
             //Osa4_funktsioonid.Kirjuta_failisse();
             //Console.WriteLine("Sisesta faili nimi: ");
             //string failinimi = Console.ReadLine();
@@ -606,9 +604,8 @@ namespace põhikonstruktsioonid
             //------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-            //Osa 5
-            //сделать конспект и выполнить задание 1 и 2
-            //Osa5_funktsioonid.ArrayList();
+            ////Osa 5 C# Kollektsioonid. Listid ja sõnastikud. Meetodid ja näidised
+            ////Osa5_funktsioonid.ArrayList();
 
             //Tuple<float, char> route = new Tuple<float, char>(2.5f, 'N');
             //Console.WriteLine($"Vahemaa: {route.Item1}, Suund: {route.Item2}");
@@ -618,23 +615,12 @@ namespace põhikonstruktsioonid
             //Osa5_funktsioonid.Dictionary();
             //Osa5_funktsioonid.Dictionary2();
 
-            //Завдання:
-            //Створити два класи:
-            //+Toode– характеристики: Nimi,Kalorid100g
-            //+Inimene– характеристики: Nimi, , Vanus, Sugu, Pikkus, Kaal,Aktiivsustase
-            //Складіть програму, яка:
-            //Зчитує Toodeоб'єкти з файлу або вручну додає їх до списку.
-            //Запитує дані у користувача та розраховує добову потребу в енергії за формулою Гарріса - Бенедикта.
-            //Надає користувачеві список продуктів, де для кожного продукту розраховується, скільки його слід з'їдати на день (г), щоб покрити потреби в калоріях.
-            //💡 Порада: поділивши калорії на калорії на 100 г = кількість у грамах.
-
-            //Console.WriteLine("1. Ülesanne");
+            ////1. Ülesanne
             //Console.WriteLine("Tere tulemast kalorite kalkulaatorisse!");
-
             //Toode.SalvestaTootedFaili();
             //Inimene_k.SisestaAndmed();
 
-            //Console.WriteLine("2. Ülesanne");
+            ////2. Ülesanne
             //Dictionary<string, string> maakonnad = new Dictionary<string, string>();
             //maakonnad.Add("Harju maakond", "Tallinn");
             //maakonnad.Add("Hiiu maakond", "Kärdla");
@@ -658,12 +644,21 @@ namespace põhikonstruktsioonid
             //{
             //    Console.WriteLine("Palun vasta jah või ei!");
             //}
+
+            ////4. Ülesanne
             //List<Film> filmid = new List<Film>();
             //Dictionary<string, List<Film>> žanri = new Dictionary<string, List<Film>>();
             //Film.Statistik(filmid, žanri);
             //Film.Dict(žanri);
             //Film.UusimFilm(filmid);
 
+            ////6. Ülesanne
+            //List<Lemmikloom> loomad = new List<Lemmikloom>();
+            //Dictionary<string, List<Lemmikloom>> liikid = new Dictionary<string, List<Lemmikloom>>();
+            //Lemmikloom.Statistik(loomad, liikid);
+            //Lemmikloom.Dict(liikid);
+            //Lemmikloom.KeskmineVanus(loomad);
+            //Lemmikloom.VanemLoom(loomad);
         }
     }
 }
