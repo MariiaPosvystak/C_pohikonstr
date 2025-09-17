@@ -9,9 +9,9 @@ namespace põhikonstruktsioonid
     internal class Isik
     {
         public string eesnimi;
-        public string perenimi = "Tray";
+        public string perenimi;
         public int synniaasta = 2000;
-
+        public Isik() { }
         public Isik(string eesnimi, string perenimi)
         {
             this.eesnimi = eesnimi;
@@ -20,7 +20,7 @@ namespace põhikonstruktsioonid
 
         public void Prindi_andmed()
         {
-            Console.WriteLine($"Isiku andmed: {perenimi} {eesnimi}. Sündinud: {synniaasta}");
+            Console.WriteLine($"Isiku andmed: eesnimi: {eesnimi}, perenimi: {perenimi}, sündinud: {synniaasta}");
         }
     }
 }

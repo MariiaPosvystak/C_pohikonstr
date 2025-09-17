@@ -1,45 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace põhikonstruktsioonid
 {
-    internal class Osa3_funktsioonid
+    public static class Osa3_funktsioonid
     {
-        //public static int[] GenereeriRuudud(int min, int max)
-        //{
-        //    string ruudu = "";
-        //    Random rnd = new Random();
-        //    min = -100;
-        //    max = 100;
-        //    int N = rnd.Next(min, max);
-        //    Console.WriteLine(N);
-        //    int M = rnd.Next(min, max);
-        //    if (N < M)
-        //    {
-        //        do
-        //        {
-        //            int N2 = N * N;
-        //            ruudu = $"{N} -> {N2}";
-        //            N++;
-        //        } while (N <= M);
-        //        return ruudu;
-        //    }
-        //    else
-        //    {
-        //        do
-        //        {
-        //            int M2 = M * M;
-        //            ruudu = $"{M} -> {M2}";
-        //            M++;
-        //        } while (M <= N);
-        //        return ruudu;
-        //    }
-
-        //}
 
         public static double[] Tekstist_arvud()
         {
@@ -69,76 +37,201 @@ namespace põhikonstruktsioonid
             return Tuple.Create(summa, keskmine, korrutis);
         }
 
-        public static string KuniMärksõnani(string märksõna, string fraas)
-        {
-            fraas = "";
+        // 4. Ülesanne
+        public static void KuniMärksõnani(string märksõna, string fraas)
+        {   
+            List<string> sisestused = new List<string>();
+            string sisend;
             do
             {
-                Console.WriteLine("Arvata ära!");
-                fraas = Console.ReadLine();
+                Console.Write(fraas);
+                sisend = Console.ReadLine();
+                sisestused.Add(sisend);
+            } while (sisend != märksõna);
+
+            Console.WriteLine("Kõik sisestused:");
+            foreach (var s in sisestused)
+            {
+                Console.WriteLine(s);
             }
-            while (fraas.ToLower() != märksõna.ToLower());
-            return fraas;
         }
 
-        public static int ArvaArv(int arv)
+        // 5. Ülesanne
+        public static void ArvaArv()
         {
-            string v = "";
             Random rnd = new Random();
+            bool uuesti;
             do
             {
-                arv = rnd.Next(0, 100);
-                for (int i = 0; i < 5; i++)
+                int arv = rnd.Next(1, 101);
+                int katsed = 0;
+                bool arvas = false;
+                Console.WriteLine("Arva ära arv vahemikus 1 kuni 100! Sul on 5 katset.");
+                while (katsed < 5 && !arvas)
                 {
-                    Console.Write("Arva arv: ");
-                    try
+                    Console.Write($"Katse {katsed + 1}: ");
+                    string sisend = Console.ReadLine();
+                    int pakkumine;
+                    if (!int.TryParse(sisend, out pakkumine))
                     {
-                        int a = int.Parse(Console.ReadLine());
-                        if (a == arv)
-                        {
-                            Console.WriteLine("Tubli, siis arv on Õige");
-                        }
-                        else if (a > arv)
-                        {
-                            Console.WriteLine("Su arv on liiga suur");
-                        }
-                        else if (a < arv)
-                        {
-                            Console.WriteLine("Su arv on liiga väike");
-                        }
+                        Console.WriteLine("Palun sisesta täisarv.");
+                        continue;
                     }
-                    catch (Exception e)
+                    katsed++;
+                    if (pakkumine == arv)
                     {
-                        Console.WriteLine(e);
+                        Console.WriteLine("Õige! Tubli!");
+                        arvas = true;
+                    }
+                    else if (pakkumine < arv)
+                    {
+                        Console.WriteLine("Liiga väike.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Liiga suur.");
                     }
                 }
-                Console.WriteLine($"Õige vastus on {arv}");
-                Console.WriteLine("Kas sa soovib uuesti mängida.");
-                v = Console.ReadLine();
-            }
-            while (v.ToLower() != "ei");
-            Console.WriteLine("Mängi lõpuks");
-            return arv;
+                if (!arvas)
+                {
+                    Console.WriteLine($"Kahjuks ei arvanud ära. Õige vastus oli {arv}.");
+                }
+                Console.Write("Kas soovid uuesti mängida? (jah/ei): ");
+                string vastus = Console.ReadLine();
+                uuesti = vastus.Trim().ToLower() == "jah";
+            } while (uuesti);
         }
 
-        public static int SuurimNeljarv(int[] arvud)
+        // 6. Ülesanne
+        public static int SuurimNeliarv(int[] arvud)
         {
-            Array.Sort(arvud);
-            Array.Reverse(arvud);
-            int summ = arvud[0] * 1000 + arvud[1] * 100 + arvud[2] * 10 + arvud[3];
-            return summ;
+            if (arvud.Length != 4)
+                throw new ArgumentException("Täpselt 4 arvu on vaja.");
+
+            foreach (var arv in arvud)
+            {
+                if (arv < 0 || arv > 9)
+                {
+                    Console.WriteLine("Arvud peavad olema ühekohalised (0-9).");
+                }
+            }
+            var suurim = arvud.OrderByDescending(x => x).Aggregate(0, (acc, x) => acc * 10 + x);
+            return suurim;
         }
-        //public static int GenereeriKorrutustabel(int ridadeArv, int veergudeArv)
-        //{
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        ridadeArv += ridadeArv;
-        //        veergudeArv += veergudeArv;
-        //        i++;
-        //        int m = ridadeArv * veergudeArv * i;
-                
-        //        return m;
-        //    }
-        //}
+
+        // 7. Ülesanne
+        public static int[,] GenereeriKorrutustabel(int ridadeArv, int veergudeArv)
+        {
+            int[,] tabel = new int[ridadeArv, veergudeArv];
+            int laius = (ridadeArv * veergudeArv) + 1;
+            for (int i = 0; i < ridadeArv; i++)
+            {
+                for (int j = 0; j < veergudeArv; j++)
+                {
+                    tabel[i, j] = (i + 1) * (j + 1);
+                    Console.Write(tabel[i, j]);
+                }
+                Console.WriteLine();
+            }
+            return tabel;
+        }
+        public static void KysiKorrutustabelist(int[,] tabel)
+        {
+            while (true)
+            {
+                Console.Write("Sisesta rida (või enter lõpetamiseks): ");
+                string ridaSisend = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(ridaSisend)) break;
+                Console.Write("Sisesta veerg: ");
+                string veergSisend = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(veergSisend)) break;
+                if (int.TryParse(ridaSisend, out int rida) && int.TryParse(veergSisend, out int veerg)
+                    && rida > 0 && veerg > 0 && rida <= tabel.GetLength(0) && veerg <= tabel.GetLength(1))
+                {
+                    Console.WriteLine($"{rida} x {veerg} = {tabel[rida - 1, veerg - 1]}");
+                }
+                else
+                {
+                    Console.WriteLine("Vigane sisestus.");
+                }
+            }
+        }
+        // 8. Ülesanne
+        public static void OpilasteMäng(string[] opilased)
+        {
+            Console.WriteLine("Õpilased:");
+            foreach (var op in opilased)
+            {
+                Console.WriteLine(op);
+            }
+            Random rnd = new Random();
+            while (true)
+            {
+                Console.Write("Sisesta õpilase nimi (või enter lõpetamiseks): ");
+                string sisend = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(sisend)) break;
+                var leitud = opilased.FirstOrDefault(o => o.Equals(sisend, StringComparison.OrdinalIgnoreCase));
+                if (leitud != null)
+                {
+                    Console.WriteLine($"Leitud: {leitud}");
+                    int index = Array.IndexOf(opilased, leitud);
+                    int uusIndex;
+                    do
+                    {
+                        uusIndex = rnd.Next(opilased.Length);
+                    } while (uusIndex == index);
+                    Console.WriteLine($"Vahetame {leitud} asemel välja {opilased[uusIndex]}");
+                    opilased[index] = opilased[uusIndex];
+                    opilased[uusIndex] = leitud;
+                }
+                else
+                {
+                    Console.WriteLine("Õpilast ei leitud.");
+                }
+            }
+            Console.WriteLine("Lõplik nimekiri:");
+            foreach (var op in opilased)
+            {
+                Console.WriteLine(op);
+            }
+        }
+        // 9. Ülesanne 
+        public static void ArvudeRuududJaKahekordsed(int[] arvud)
+        {
+            Console.WriteLine("Arvude ruudud (for):");
+            for (int i = 0; i < arvud.Length; i++)
+            {
+                Console.WriteLine($"{arvud[i]}^2 = {arvud[i] * arvud[i]}");
+            }
+
+            Console.WriteLine("Arvude kahekordsed väärtused (foreach):");
+            foreach (var arv in arvud)
+            {
+                Console.WriteLine($"{arv} x 2 = {arv * 2}");
+            }
+
+            int jagubKolmega = 0;
+            int j = 0;
+            while (j < arvud.Length)
+            {
+                if (arvud[j] % 3 == 0)
+                    jagubKolmega++;
+                j++;
+            }
+            Console.WriteLine($"Arve, mis jaguvad 3-ga: {jagubKolmega}");
+        }
+
+        // 10. Ülesanne - Positiivsed ja negatiivsed
+        public static void PositiivsedNegatiivsedNullid(int[] arvud)
+        {
+            int pos = 0, neg = 0, nullid = 0;
+            foreach (var arv in arvud)
+            {
+                if (arv > 0) pos++;
+                else if (arv < 0) neg++;
+                else nullid++;
+            }
+            Console.WriteLine($"Positiivseid: {pos}, Negatiivseid: {neg}, Nulle: {nullid}");
+        }
     }
 }

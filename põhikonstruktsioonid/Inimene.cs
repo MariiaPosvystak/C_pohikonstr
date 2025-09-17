@@ -8,9 +8,9 @@ namespace põhikonstruktsioonid
 {
     internal class Inimene
     {
-        string nimi;
-        int vanus;
-        
+        public string nimi;
+        public int vanus;
+        public Inimene() { }
         public Inimene (string nimi, int vanus)
         {
             this.nimi = nimi;
