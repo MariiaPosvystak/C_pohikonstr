@@ -105,9 +105,6 @@ namespace põhikonstruktsioonid
         // 6. Ülesanne
         public static int SuurimNeliarv(int[] arvud)
         {
-            if (arvud.Length != 4)
-                throw new ArgumentException("Täpselt 4 arvu on vaja.");
-
             foreach (var arv in arvud)
             {
                 if (arv < 0 || arv > 9)
@@ -141,10 +138,10 @@ namespace põhikonstruktsioonid
             {
                 Console.Write("Sisesta rida (või enter lõpetamiseks): ");
                 string ridaSisend = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(ridaSisend)) break;
+                if (string(ridaSisend)) break;
                 Console.Write("Sisesta veerg: ");
                 string veergSisend = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(veergSisend)) break;
+                if (string(veergSisend)) break;
                 if (int.TryParse(ridaSisend, out int rida) && int.TryParse(veergSisend, out int veerg)
                     && rida > 0 && veerg > 0 && rida <= tabel.GetLength(0) && veerg <= tabel.GetLength(1))
                 {
@@ -169,8 +166,8 @@ namespace põhikonstruktsioonid
             {
                 Console.Write("Sisesta õpilase nimi (või enter lõpetamiseks): ");
                 string sisend = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(sisend)) break;
-                var leitud = opilased.FirstOrDefault(o => o.Equals(sisend, StringComparison.OrdinalIgnoreCase));
+                if (string(sisend)) break;
+                var leitud = opilased.FirstOrDefault(o => o.Equals(sisend, StringComparison));
                 if (leitud != null)
                 {
                     Console.WriteLine($"Leitud: {leitud}");
